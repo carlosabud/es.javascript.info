@@ -1,33 +1,34 @@
 
 # Fetch
 
-JavaScript can send network requests to the server and load new information whenever it's needed.
+JavaScript puede enviar peticiones de red al servidor y cargar nueva información siempre que se necesite.
 
-For example, we can use a network request to:
+Por ejemplo, podemos utilizar una peticion de red para: 
 
-- Submit an order,
-- Load user information,
-- Receive latest updates from the server,
-- ...etc.
+- Crear una orden,
+- Cargar información de usuario,
+- Recibir las últimas actualizaciones desde un servidor, 
+- ...etcétera. 
 
-...And all of that without reloading the page!
+...Y todo esto sin la necesidad de refrescar la página. 
 
-There's an umbrella term "AJAX" (abbreviated <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML) for network requests from JavaScript. We don't have to use XML though: the term comes from old times, that's why that word is there. You may have heard that term already.
+El término global "AJAX" (abreviado <b>A</b>synchronous <b>J</b>avaScript <b>A</b>nd <b>X</b>ML en inglés o en español, "JavaScript y XML Asincrónico") utilizado para referirse a las peticiones de red originadas desde JavaScript. Sin embargo, no estamos necesariamente condicionados a utilizar XML dado que el término es antigüo y es por esto que el acronimo XML se encuentra aquí. Probablemente lo hayáis visto anteriormente.
 
-There are multiple ways to send a network request and get information from the server.
+Existen múltiples maneras de enviar peticiones de red y obtener información de un servidor.
 
-The `fetch()` method is modern and versatile, so we'll start with it. It's not supported by old browsers (can be polyfilled), but very well supported among the modern ones.
+Comenzaremos con el el método `fetch()` que es moderno y versátil. Este método no es soportado por navegadores antigüos (sin embargo se puede incluir un polyfill), pero es perfectamente soportado por los navegadores actuales y modernos.
 
-The basic syntax is:
+La sintaxis básica es la siguiente: 
 
 ```js
 let promise = fetch(url, [options])
 ```
 
-- **`url`** -- the URL to access.
-- **`options`** -- optional parameters: method, headers etc.
+- **`url`** -- representa la dirección URL a la que deseamos acceder.
+- **`options`** -- representa los parametros opcionales, como puede ser un método o los encabezados de nuestra petición, etc. 
 
-Without `options`, that is a simple GET request, downloading the contents of the `url`.
+
+Si no especificamos ningún `options`, se ejecutará una simple petición GET, la cual descargará el contenido de lo especificado en el `url`.
 
 The browser starts the request right away and returns a promise that the calling code should use to get the result.
 
